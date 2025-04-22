@@ -3,15 +3,12 @@
 
 	const dispatch = createEventDispatcher();
 
-	export let size = 'medium';
+	export let size = '';
 	export let className = '';
 	export let beforeIcon = '';
     export let afterIcon = '';
-	export let textColor = '';
-	export let bgColor = '';
 	export let status = '';
-	export let noBorder = false;
-	export let variant = 'filled';
+	export let variant = '';
 
 	let visible = true;
 
@@ -31,8 +28,8 @@
 	};
 
 	$: className = status
-		? statusStyle[status as keyof typeof statusStyle] || `${textColor} ${bgColor}`
-		: `${textColor} ${bgColor}`;
+		? statusStyle[status as keyof typeof statusStyle] || ``
+		: ``;
 </script>
 
 {#if visible}
@@ -41,7 +38,7 @@
 	<div
 		class={` cursor-pointer gap-1 inline-flex items-center ${sizeClass} ${className} ${
 			variant === 'outline' ? 'border' : ''
-		} ${noBorder ? 'border-none' : ''}`}
+		} `}
 		on:click={(event) => dispatch('click', event)}
 	>
 		{#if beforeIcon}
