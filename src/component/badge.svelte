@@ -3,22 +3,19 @@
 
 	const dispatch = createEventDispatcher();
 
-	export let size = 'medium';
+	export let size = '';
 	export let className = '';
 	export let beforeIcon = '';
     export let afterIcon = '';
-	export let textColor = '';
-	export let bgColor = '';
 	export let status = '';
-	export let noBorder = false;
-	export let variant = 'filled';
+	export let variant = '';
 
 	let visible = true;
 
 	$: sizeClass = {
 		sm: 'px-1 py-1 text-[10px] leading-[14px] font-semibold rounded-[8px]',
 		md: 'px-2 py-2 text-[14px] leading-[14px] font-semibold rounded-[8px]',
-		lg: 'px-2 py-2 text-[16px] leading-[14px] font-medium rounded-[8px]',
+		lg: 'px-2 py-2 text-[16px] leading-[14px] font-semibold rounded-[8px]',
 		full: 'w-full py-2.5 text-lg'
 	}[size];
 
@@ -31,8 +28,8 @@
 	};
 
 	$: className = status
-		? statusStyle[status as keyof typeof statusStyle] || `${textColor} ${bgColor}`
-		: `${textColor} ${bgColor}`;
+		? statusStyle[status as keyof typeof statusStyle] || ``
+		: ``;
 </script>
 
 {#if visible}
@@ -41,7 +38,7 @@
 	<div
 		class={` cursor-pointer gap-1 inline-flex items-center ${sizeClass} ${className} ${
 			variant === 'outline' ? 'border' : ''
-		} ${noBorder ? 'border-none' : ''}`}
+		} `}
 		on:click={(event) => dispatch('click', event)}
 	>
 		{#if beforeIcon}
