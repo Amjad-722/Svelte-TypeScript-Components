@@ -6,8 +6,8 @@
 	export let message = '';
     
 	$: variants = {
-		warning: 'text-[10px] bg-yellow-50 text-yellow-400 leading-[14px] font-semibold rounded-[8px]',
-		error: 'bg-red-50 text-[14px] text-neutral-950 leading-[14px] font-semibold rounded-[8px]',
+		warning: 'text-[10px] bg-yellow-50 text-neutral-950 leading-[14px] font-semibold rounded-[8px]',
+		error: 'bg-red-100 text-[14px] text-neutral-950 leading-[14px] font-semibold rounded-[8px]',
 		success: 'text-[16px] bg-green-50 text-neutral-950 leading-[14px] font-medium rounded-[8px]'
 	} as const;
 

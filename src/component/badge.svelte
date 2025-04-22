@@ -13,8 +13,8 @@
 	let visible = true;
 
 	$: sizeClass = {
-		sm: 'px-1 py-1 text-[10px] leading-[14px] font-semibold rounded-[8px]',
-		md: 'px-2 py-2 text-[14px] leading-[14px] font-semibold rounded-[8px]',
+		sm: 'px-1.5 py-1 text-[12px] leading-[14px]  rounded-[6px]',
+		md: 'px-2 py-2 text-[14px] leading-[14px] font-medium rounded-[8px]',
 		lg: 'px-2 py-2 text-[16px] leading-[14px] font-semibold rounded-[8px]',
 		full: 'w-full py-2.5 text-lg'
 	}[size];
