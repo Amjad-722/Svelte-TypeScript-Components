@@ -10,7 +10,7 @@ let items = [
 <div>
 
    
-        <ul class="flex flex-col gap-2 items-center">
+        <ul class="flex flex-col gap-4 items-center">
         {#each items as item}
         <li class="text-lg font-medium rounded-full" style="color: {item.hex}">{item.name}</li>
         {/each}
