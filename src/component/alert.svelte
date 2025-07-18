@@ -28,7 +28,8 @@
 		<div class="flex-shrink-0">
 			<img src={icon} alt={variant} />
 		</div>
-		<div class="flex-1">
+		<div class="flex
+		">
 			{#if hasTitle}
 				<h3 class="text-sm font-medium">{title}</h3>
 			{/if}
